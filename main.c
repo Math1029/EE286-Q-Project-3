@@ -12,16 +12,6 @@ double x_random(double minimum, double maximum, int x_length){
    return x;
 }
 
-double y_function(double x){
-   double y = sqrt(pow(x,3) - 3*x + 3);
-   return y;
-}
-
-double get_distance(double x, double y){
-   double distance = sqrt(pow(x,2) + pow(y,2));
-   return distance;
-}
-
 double generate_key(double distance, int private_key){
    double public_key = distance*private_key;
    return public_key;
@@ -29,8 +19,8 @@ double generate_key(double distance, int private_key){
 
 int main(){
    double x = x_random(-2, 2, 1001);
-   double y = y_function(x);
-   double distance = get_distance(x, y);
+   double y = sqrt(pow(x,3) - 3*x + 3);
+   double distance = sqrt(pow(x,2) + pow(y,2));
 
    int key_a = 30;
    int key_b = 40;

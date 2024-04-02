@@ -5,7 +5,7 @@
 #include <time.h>
 
 double x_random(double minimum, double maximum){
-   int x_length = pow(2,31);
+   int x_length = pow(2,31) - 1;
    double interval = (maximum - minimum) / (x_length - 1);
    srand(time(NULL));
    int random = rand() % x_length;

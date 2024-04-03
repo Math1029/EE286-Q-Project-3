@@ -5,11 +5,8 @@
 #include <time.h>
 
 double x_random(double minimum, double maximum){
-   int x_length = pow(2,31) - 1;
-   double interval = (maximum - minimum) / (x_length - 1);
    srand(time(NULL));
-   int random = rand() % x_length;
-   double x = minimum + random*interval;
+   double x = ((double)rand()/RAND_MAX)*4 - 2;
    return x;
 }
 
@@ -20,7 +17,7 @@ double generate_key(double distance, int private_key){
 
 int main(){
    double x = x_random(-2, 2);
-   printf("%lf\n", x);
+   printf("x:        %lf\n", x);
    double y = sqrt(pow(x,3) - 3*x + 3);
    double distance = sqrt(pow(x,2) + pow(y,2));
 

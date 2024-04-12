@@ -10,7 +10,7 @@ const int array_size = 1000;
 #define MAX_KEY_SIZE 100
 #define BLOCK 1 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-EasyMFRC522 rfidReader(22, 30);
+EasyMFRC522 rfidReader(7, 8);
 void setup() {
   analogWrite(6, 75);
   lcd.begin(16, 2);

@@ -47,7 +47,7 @@ void loop() {
   float y = sqrt(pow(x,3) - 3*x + 3);
   float distance = sqrt(pow(x,2) + pow(y,2));
   int key_a = RFID_key;
-  float key_one = key_a * distance;
+  float key_one = int(key_a) * distance;
   lcd.setCursor(0,2);
   lcd.print("Key:" + char(key_one));
   do{

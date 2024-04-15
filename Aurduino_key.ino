@@ -19,8 +19,9 @@ void setup() {
 }
 void loop() {
   lcd.clear();
+  lcd.setcursor(0,0);
   while (Serial.available() == 0){
-  Serial.println("Scan your key");
+  lcd.print("Scan your key");
   }
   bool success;
   do {
@@ -43,6 +44,7 @@ void loop() {
     x_array[i] = minimum + (difference/array_size);
   }
   float x = x_array[array_num];
+  lcd.clear();
   lcd.print("Num: " + char(array_num));
   float y = sqrt(pow(x,3) - 3*x + 3);
   float distance = sqrt(pow(x,2) + pow(y,2));
